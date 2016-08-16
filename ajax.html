@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<a href="http://www.baidu.com">打开百度</a>
+<form action="http://www.baidu.com" method="post">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState ==4){
+            document.body.innerHTML += xhr.responseText;
+        }
+    }
+    xhr.open('GET','http://www.cnfrp.com/college/',false);
+    xhr.setRequestHeader('Content-Type','text/html')
+</script>
